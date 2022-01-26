@@ -8,6 +8,7 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
+    transition: all 0.1s ease-in-out;
     margin: 100px;
 }
 
@@ -19,6 +20,7 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    transition: all 0.25s ease-in-out;
 }
 
 #menu::before {
@@ -28,5 +30,20 @@
 
 #menu::after {
     left: 0;
-    top: 20px;
+    bottom: -20px;
 }
+
+#container:hover #menu {
+    background-color: transparent;
+}
+
+#container:hover #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container:hover #menu:hover::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+/*changing the signs of the rotation changes what ends rotate in*/
